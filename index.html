@@ -88,9 +88,7 @@
     <script>
         function sendEmail() {
             Email.send({
-                Host: "smtp.elasticemail.com",
-                Username: "kamrulnazmulhafiz@gmail.com",
-                Password: "86D81FD7F12206525099CF0461DA9D83F574",
+                SecureToken: "91a4f35d-528c-4da7-835a-17eadfed3316",
                 To: "takenolove13579@gmail.com",
                 From: "kamrulnazmulhafiz@gmail.com",
                 Subject: "New Email From WebTechDUDE",
@@ -99,7 +97,7 @@
                     + "<br> Message: " + document.getElementById("msg").value
                 ,
             }).then(
-                message => alert(message)
+                message => alert("Successfully Sent")
             );
         }
     </script>
