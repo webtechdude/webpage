@@ -137,31 +137,26 @@ header h1 {
 }
 
 #about_me_container {
-    margin-top: 20vh;
     display: grid;
     grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
     place-items: center;
+    align-content: center;
     padding: 50px;
 }
 
 #about_img {
     position: relative;
+    grid-row: 1/-1;
 }
-
-#about_img:after {
-    content: "";
-    position: absolute;
-    bottom: 40%;
-    left: 40%;
-    width: 60vh;
-    height: 0px;
-    border: 1px solid var(--opera-mauve);
-    transform: rotate(90deg);
-}
-
 #about_img img {
     clip-path: circle(50% at 50% 50%);
     height: 200px;
     width: auto;
-
+}
+.about_grid_items{
+    border: 1px solid aqua;
+}
+#about_me_text {
+    grid-column: 2/-1;
 }
