@@ -137,26 +137,121 @@ header h1 {
 }
 
 #about_me_container {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 1fr;
-    place-items: center;
-    align-content: center;
-    padding: 50px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 60px;
 }
 
-#about_img {
-    position: relative;
-    grid-row: 1/-1;
+#aboutImg {
+    flex: 1;
+    animation: shadow 3s infinite alternate;
+    border-radius: 50%;
+
 }
-#about_img img {
+
+#aboutImg img {
+    width: 300px;
     clip-path: circle(50% at 50% 50%);
-    height: 200px;
-    width: auto;
+    height: auto;
 }
-.about_grid_items{
-    border: 1px solid aqua;
+
+@keyframes shadow {
+    0% {
+        box-shadow: 5px 5px 13px 10px rgba(0, 0, 0),
+            -5px -5px 13px 5px rgb(255, 159, 239);
+    }
+
+    25% {
+        box-shadow: 5px 5px 17px 15px rgba(0, 0, 0),
+            -5px -5px 17px 10px rgb(255, 159, 239);
+        opacity: 0.8;
+    }
+
+    50% {
+        box-shadow: 5px 5px 25px 20px rgba(0, 0, 0),
+            -5px -5px 25px 15px rgb(255, 159, 239);
+        opacity: 0.7;
+    }
+
+    75% {
+        box-shadow: 5px 5px 17px 15px rgba(0, 0, 0),
+            -5px -5px 17px 10px rgb(255, 159, 239);
+        opacity: 0.8;
+    }
+
+    100% {
+        box-shadow: 5px 5px 13px 10px rgba(0, 0, 0),
+            -5px -5px 13px 5px rgb(255, 159, 239);
+    }
 }
-#about_me_text {
-    grid-column: 2/-1;
+
+.aboutTextItems {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.aboutTextItems h1 {
+    font-size: 2em;
+}
+
+.aboutTextItems hr {
+    width: 100%;
+}
+
+
+
+/* Form  */
+form {
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 30px 20px;
+    transition: box-shadow 0.2s ease-in-out;
+    font-family: 'Work Sans', sans-serif;
+    margin-inline: auto;
+    max-width: 80vw;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+form:focus-within,
+form:focus,
+form:hover {
+    box-shadow: rgba(197, 121, 227, 0.5) 0px 0 20px 4px;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    font-size: 16px;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--xiketic);
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    caret-color: var(--lavender-floral);
+    background-color: #273045;
+}
+
+input:active,
+input:focus,
+textarea {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+form .btn {
+    border: none;
+    display: block;
+    margin: auto;
+    padding: 10px 60px;
 }
