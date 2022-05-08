@@ -16,32 +16,36 @@
     <link rel="stylesheet" href="css/utils.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/670ebf25f1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <nav>
-        <div onclick="location.href='/'" id="logo"><img src="img/logo.png" alt="">WebTechDUDE</div>
+        <div onclick="location.href='index.html'" id="logo"><img src="img/logo.png" alt="">WebTechDUDE</div>
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About Me</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about_me">About Me</a></li>
+            <li><a href="#contact_us">Contact</a></li>
+            <li><a href="#moreSection">More</a></li>
         </ul>
         <a class="btn" href="">Mail Us<i class="fa-solid fa-arrow-right"></i></a>
     </nav>
     <header>
-        <div class="headercontainer">
+        <div id="home" class="headercontainer">
             <h1>Welcome to WebTechDUDE</h1>
             <p>Web Development YouTube Channel</p>
             <div id="youtube-sub">
                 <h3>Subscribe to my YouTube channel</h3>
                 <div class="g-ytsubscribe" data-channelid="UCXKgzUGQylXtirfR4-SxyzA" data-layout="full"
-                    data-count="default">
-                </div>
+                    data-theme="dark" data-count="hidden"></div>
             </div>
+        </div>
         </div>
     </header>
     <section id="about_me">
-        <h1 class="sect_head">About Me</h1>
+        <h1 class="sect_head"><i class="fa-solid fa-person"></i>About Me</h1>
         <div id="about_me_container">
             <div id="aboutImg" class="aboutItems"><img src="img/ABOUTpic.png" alt=""></div>
             <div class="aboutTextItems aboutItems">
@@ -66,9 +70,8 @@
             </ul>
         </div>
     </section>
-
     <section id="contact_us">
-        <h1 class="sect_head">Contact Us</h1>
+        <h1 class="sect_head"><i class="fa-solid fa-message"></i> Contact Us</h1>
         <form onsubmit="sendEmail(); reset(); return false;">
             <label for="name">First Name</label>
             <input type="text" id="name" name="name" placeholder="Your name..">
@@ -82,6 +85,46 @@
             <input class="btn" type="submit" value="Send">
         </form>
     </section>
+    <img src="img/divider.svg" alt="">
+    <section id="moreSection">
+        <h1 class="sect_head"><i class="fa-solid fa-chart-simple"></i> GitHub Stats</h1>
+        <div class="githubStatsImg">
+            <img src="https://github-readme-streak-stats.herokuapp.com?user=webtechdude&theme=github-dark&hide_border=true&date_format=M%20j%5B%2C%20Y%5D&fire=BADD00&border_radius=10
+            " alt="">
+            <img src="https://github-readme-stats.vercel.app/api?username=webtechdude&show_icons=true&theme=github_dark&border_radius=10
+            " alt="">
+            <img src=" https://github-readme-stats.vercel.app/api/top-langs/?username=webtechdude&theme=github_dark&layout=compact"
+                alt="">
+            <img src="https://github-profile-trophy.vercel.app/?username=fatinnoortaki&theme=radical&no-frame=true&no-bg=false"
+                alt="">
+        </div>
+        <div id="meme">
+            <h2>#Random_Programming_Meme</h2>
+            <img src="https://quotes-github-readme.vercel.app/api?type=vertical&theme=catppuccin" alt="">
+        </div>
+    </section>
+    <footer>
+        <div id="footerMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <i class="fa-solid fa-grip-lines-vertical"></i>
+                <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                <i class="fa-solid fa-grip-lines-vertical"></i>
+                <li><a href="termsandconditions.html">Terms And Conditions</a></li>
+            </ul>
+        </div>
+        <hr>
+        <div id="copyRight">
+            © 2022 WebTechDUDE
+        </div>
+    </footer>
+
+
+
+
+
+
+    <!-- SCRIPTS -->
     <script src="https://apis.google.com/js/platform.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
@@ -101,9 +144,36 @@
             );
         }
     </script>
+    <!-- Messenger Chat plugin Code -->
+    <div id="fb-root"></div>
 
+    <!-- Your Chat plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
 
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "112401254794699");
+        chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
 
+    <!-- Your SDK code -->
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v13.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
 </body>
 

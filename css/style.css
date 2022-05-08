@@ -1,10 +1,9 @@
 /* CSS HEX */
 :root {
     --little-boy-blue: #6EAAEBff;
-    --xiketic: #140815ff;
+    --light-xiketic: #140815;
     --opera-mauve: #BA7DABff;
-    --lavender-floral: #C579E3ff;
-    --rich-black-fogra-29: #080B11ff;
+    --rich-black-fogra-10: rgba(28, 13, 29, 0.91)
 }
 
 /* 
@@ -21,15 +20,20 @@ font-family: 'Comfortaa', cursive;
     outline: none;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: whitesmoke;
-    background-color: var(--xiketic);
+    background-color: var(--light-xiketic);
+    font-family: 'Work Sans', sans-serif;
 }
 
 /* Navbar */
 nav {
     min-height: 60px;
-    background-color: var(--rich-black-fogra-29);
+    background-color: var(--rich-black-fogra-10);
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -43,13 +47,15 @@ nav {
 }
 
 #logo {
+    cursor: pointer;
     display: flex;
     align-items: center;
-    font-family: 'Comfortaa', cursive;
+    font-family: 'Lalezar', cursive;
 }
 
 #logo img {
     height: 50px;
+    width: auto;
 }
 
 nav ul {
@@ -70,7 +76,7 @@ nav ul a {
     text-shadow: 0 0 10px black;
     color: white;
     text-decoration: none;
-    padding: 5px 20px;
+    padding: clamp(5px 20px, 8px 20px);
 }
 
 nav a:hover {
@@ -105,6 +111,10 @@ header h1 {
     font-size: 3em;
 }
 
+header p {
+    color: var(--opera-mauve);
+}
+
 #youtube-sub {
     display: flex;
     flex-direction: column;
@@ -132,7 +142,10 @@ header h1 {
 
 /* About me */
 #about_me {
-    background-image: url('../img/section-bg.svg');
+    background-image: url('../img/moreSection.svg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #about_me_container {
@@ -146,7 +159,7 @@ header h1 {
 
 #aboutImg {
     flex: 1;
-    animation: shadow 3s infinite alternate;
+    animation: shadow 5s ease infinite alternate;
     border-radius: 50%;
 
 }
@@ -172,7 +185,7 @@ header h1 {
     50% {
         box-shadow: 5px 5px 25px 20px rgba(0, 0, 0),
             -5px -5px 25px 15px rgb(255, 159, 239);
-        opacity: 0.7;
+        opacity: 0.5;
     }
 
     75% {
@@ -211,7 +224,7 @@ form {
     border-radius: 10px;
     margin-top: 30px;
     padding: 30px 20px;
-    transition: box-shadow 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     font-family: 'Work Sans', sans-serif;
     margin-inline: auto;
     max-width: 80vw;
@@ -219,9 +232,19 @@ form {
 }
 
 form:focus-within,
-form:focus,
-form:hover {
-    box-shadow: rgba(197, 121, 227, 0.5) 0px 0 20px 4px;
+form:focus {
+    animation: shadow-change 2s ease infinite alternate;
+}
+
+@keyframes shadow-change {
+    from {
+        box-shadow: rgba(197, 121, 227, 0.5) 0px 0 25px 10px;
+    }
+
+    to {
+        box-shadow: rgba(197, 121, 227, 0.5) 0px 0 40px 12px;
+    }
+
 }
 
 input[type=text],
@@ -232,13 +255,13 @@ textarea {
     color: white;
     width: 100%;
     padding: 12px;
-    border: 1px solid var(--xiketic);
+    border: 1px solid var(--light-xiketic);
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
-    caret-color: var(--lavender-floral);
+    caret-color: var(--opera-mauve);
     background-color: #273045;
 }
 
@@ -255,6 +278,95 @@ form .btn {
     margin: auto;
     padding: 10px 60px;
 }
+
+/* More Section / GitHub Stats */
+#moreSection {
+    background-image: url('../img/github-bg.svg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.githubStatsImg {
+    margin-inline: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4vmin;
+    padding: 8vmin 0;
+}
+
+.githubStatsImg img {
+    width: 90%;
+    max-width: 600px;
+}
+
+.githubStatsImg img:last-child {
+    max-width: 96vw;
+}
+
+#meme {
+    text-align: center;
+}
+
+#meme h2 {
+    font-family: 'Lalezar', cursive;
+    color: var(--little-boy-blue);
+}
+
+/* ------------------Footer---------------------- */
+footer {
+    min-height: 40px;
+    background-color: var(--rich-black-fogra-10);
+    padding: 10px 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.473);
+}
+
+footer ul {
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+
+}
+
+#footerMenu {
+    padding: 8px 0;
+}
+
+#footerMenu,
+footer ul a {
+    color: rgba(255, 255, 255, 0.63);
+}
+
+#footerMenu,
+footer ul a:hover {
+    color: rgba(255, 255, 255, 0.712);
+}
+
+footer ul a {
+    text-decoration: none;
+    font-family: 'Comfortaa', cursive;
+    font-size: 0.9em;
+}
+
+#copyRight {
+    padding: 8px 0;
+}
+
+footer hr {
+    margin-inline: auto;
+    width: 60%;
+}
+
+
+
+
+/* =================  Media Query ===================== */
 
 @media screen and (max-width: 850px) {
     nav .btn {
@@ -274,14 +386,17 @@ form .btn {
     }
 
     nav ul {
+        padding: 0 5px 0 0px;
         flex-basis: 70%;
     }
+
 
     header {
         min-height: 100vh;
         background-position: right center;
         background-size: 80%;
     }
+
     header .headercontainer {
         padding: 10px 50px;
         min-height: inherit;
@@ -290,13 +405,16 @@ form .btn {
         justify-content: space-around;
         align-items: flex-start;
     }
+
     header {
         text-shadow: 0 0 7px black;
     }
+
     header h1 {
         font-family: 'Lalezar';
         font-size: 4em;
     }
+
     #about_me_container {
         display: flex;
         flex-flow: row wrap;
@@ -305,36 +423,47 @@ form .btn {
         gap: 30px;
         padding: 60px 20px;
     }
-    
+
     #aboutImg {
         flex: 1;
         animation: shadow 3s infinite alternate;
         border-radius: 50%;
-    
+
     }
-    
+
     #aboutImg img {
         width: 200px;
         clip-path: circle(50% at 50% 50%);
         height: auto;
     }
 
+    form:focus-within,
+    form:focus,
+    form:hover {
+        animation: none;
+    }
+
+
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 685px) {
     nav {
         flex-flow: column wrap;
+        justify-content: center;
     }
 
     nav ul {
-        flex-basis: 90%;
-        padding: 10px 0 20px;
+        width: 100%;
+        padding: 10px 5px 20px;
+
     }
+
     header {
         min-height: 90vh;
         background-position: center;
         background-size: 90%;
     }
+
     header .headercontainer {
         padding: 10px 30px;
         min-height: inherit;
@@ -343,13 +472,16 @@ form .btn {
         justify-content: space-around;
         align-items: flex-start;
     }
+
     header {
         text-shadow: 0 0 7px black;
     }
+
     header h1 {
         font-family: 'Lalezar';
         font-size: 2em;
     }
+
     #about_me_container {
         display: flex;
         flex-flow: row wrap;
@@ -359,22 +491,22 @@ form .btn {
         padding: 80px 60px;
         text-align: center;
     }
-    
+
     #aboutImg {
         text-align: center;
         flex: 1;
         animation: none;
         border-radius: 50%;
-    
+
     }
-    
+
     #aboutImg img {
         width: 150px;
         clip-path: circle(50% at 50% 50%);
         height: auto;
     }
-    
-    
+
+
     .aboutTextItems {
         flex: 3;
         display: flex;
@@ -383,12 +515,29 @@ form .btn {
         justify-content: space-between;
         gap: 20px;
     }
-    
+
     .aboutTextItems h1 {
         font-size: 2em;
     }
-    
+
     .aboutTextItems hr {
         width: 100%;
     }
+
+    form {
+        border-radius: 8px;
+        margin-top: 10px;
+        padding: 20px 10px;
+        max-width: 95vw;
+    }
+
+    .sect_head {
+        text-align: center;
+        font-size: 2em;
+        line-height: 40px;
+        position: relative;
+        padding-bottom: 20px;
+        text-shadow: 0 0 10px solid black;
+    }
+
 }
