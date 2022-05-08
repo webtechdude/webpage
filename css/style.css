@@ -447,6 +447,9 @@ footer hr {
 }
 
 @media screen and (max-width: 685px) {
+    #about_me, #moreSection {
+        background-attachment: scroll;
+    }
     nav {
         flex-flow: column wrap;
         justify-content: center;
