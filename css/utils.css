@@ -79,7 +79,7 @@ h1,h2,h3,p,a {font-family: 'Work Sans', sans-serif;}
   box-sizing: border-box;
   text-decoration:none;
   background: linear-gradient(0deg, #1A243C, #18223B);
-  transition: .5s;
+  transition: 0.1s ease-in;
 }
 
 #social-link ul li a:hover {
